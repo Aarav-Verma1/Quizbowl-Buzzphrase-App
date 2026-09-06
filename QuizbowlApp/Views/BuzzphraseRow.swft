@@ -1,0 +1,25 @@
+import SwiftUI
+
+struct BuzzphraseRow: View {
+    let buzzword: Buzzphrase
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text(buzzword.phrase)
+                .font(.headline)
+
+            if let score = buzzword.score {
+                Text("Score: \(score, specifier: "%.2f")")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+
+            if let celerity = buzzword.celerity {
+                Text("Celerity: \(celerity, specifier: "%.2f")")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+        }
+        .padding(.vertical, 4)
+    }
+}
